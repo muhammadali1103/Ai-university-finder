@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript>
+    <link rel="preload" as="style" href="/static/css/additional.css"><link rel="stylesheet" href="/static/css/additional.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/form_and_result.css">
+    <title>Program Recommendations</title>
+    <style>
+        
+        .style-017:hover {
+            background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+    .style-019:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+    .style-021:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    } 
+    .style-023:hover {
+        color: white;
+        text-decoration: none;
+    }
+        body {
+            max-width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 70px;
+        }
+        .recommendations {
+            background-color: #fff;
+            padding: 25px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        @media screen and (max-width: 768px) {
+            .recommendations {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="style-00">
+        <div class="style-01">
+         <div class="style-02">
+             <span class="style-03">
+                 <a href="" class="style-04">
+                    <img src="/static/images/photo-1581078426770-6d336e5de7bf.jpeg" class="style-05" /> </a> </span> <span class="style-06">
+                 <a class="style-07" href="/"></a> </span>
+         </div> <button class="style-08" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+             <div class="style-09">
+                 <span class="style-010"></span> <span class="style-011"></span> <span class="style-012"></span> <span class="style-013"></span>
+             </div>
+         </button>
+         <div class="style-014">
+             <ul class="style-015" data-app-modern-menu="true">
+                 <li class="style-016">
+                     <a class="style-017" style="font-size: 18px;" href="/">Home</a>
+                 </li>
+                 <li class="style-016">
+                     <a class="style-017" style="font-size: 18px;" href="/form">Find University</a>
+                 </li>
+                 <li class="style-018">
+                     <a class="style-019" style="font-size: 18px;" href="/about" aria-expanded="false">About</a>
+                 </li>
+                 <li class="style-020">
+                     <a class="style-021" style="font-size: 18px;" href="/contact">Contact</a>
+                 </li>
+             </ul>
+             <div class="style-022">
+                 <a class="style-023" style="font-size: 18px;" href="/blog">Explore Now</a>
+             </div>
+         </div>
+     </div>
+ </nav>
+    <div class="recommendations">
+        <h1>Recommended Programs</h1>
+        <!-- <div>{{ recommendations|safe }}</div> -->
+       <div> {{ specific_recommendations|safe }} </div>
+        <div> {{ general_recommendations|safe }} </div>
+
+        <section class="section-background">
+            <div class="container2">
+                <div class="row">
+                    <div class="column stats">
+                        <div class="stats-box">
+                            <div class="icon-box">
+                                <i class="fas fa-rocket fa-3x"></i> <!-- Rocket icon for Success Rate -->
+                            </div>
+                            <div class="text-box">
+                                <h5 class="headline">
+                                    Launch Success Rate
+                                </h5>
+                                <p class="description">
+                                    High-velocity achievements
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column students">
+                        <div class="students-box">
+                            <div class="icon-box">
+                                <i class="fas fa-user-graduate fa-3x"></i> <!-- Graduate icon for Happy Students -->
+                            </div>
+                            <div class="text-box">
+                                <h5 class="headline">
+                                    Thriving Learners
+                                </h5>
+                                <p class="description">
+                                    Empowered and engaged
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column satisfaction">
+                        <div class="satisfaction-box">
+                            <div class="icon-box">
+                                <i class="fas fa-heart fa-3x"></i> <!-- Heart icon for Satisfaction Guaranteed -->
+                            </div>
+                            <div class="text-box">
+                                <h5 class="headline">
+                                    Happiness Guarantee
+                                </h5>
+                                <p class="description">
+                                    Commitment to joy
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="article-showcase">
+            <div class="article">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Choosing the Right University</h3>
+                <p>
+                Choosing the right university is a pivotal decision that influences your academic journey and shapes your 
+                future prospects.It's not just about finding a place to study; it's about discovering an environment that
+                resonates with your personal and academic aspirations.As you embark on this quest, several factors come
+                into play, each significant in its own right
+                </p>
+            </div>
+            <div class="article">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Study Tips for Success</h3>
+                <p>Achieving academic excellence is a multifaceted goal that demands not just hard 
+                    work, but also a strategic approach to studying. One of the foundational steps
+                    towards this goal is setting clear objectives for each study session. By breaking
+                    down your overarching academic goals into smaller, manageable tasks, you not only
+                    make the workload seem less daunting but also provide yourself with a clear roadmap.
+                </p>
+            </div>
+            <div class="article">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h3>Under Graduate Programs Overview</h3>
+                <p>At the heart of undergraduate education is the pursuit of knowledge across disciplines such as 
+                Sciences, Arts, Engineering, Business, and Humanities. Each field offers specialized programs tailored 
+                to equip students with both theoretical knowledge and practical skills relevant to their area of study.
+                For instance, a Bachelor of Science (B.S.) program focuses on empirical, scientific approaches</p>
+            </div>
+        </div>
+
+
+
+
+        <footer>
+            <p>&copy; 2024 University Guide. All Rights Reserved.</p>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+                <a href="#">FAQ</a>
+            </nav>
+        </footer>
+        
+        
+    </div>
+</body>
+</html>
+{% endblock %}

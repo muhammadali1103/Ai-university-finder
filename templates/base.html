@@ -1,0 +1,40 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Include any other CSS files here -->
+</head>
+<body>
+{% block content %}
+{% endblock %}
+
+<!-- Chat Icon and Chat Container -->
+<div id="chat-icon">
+    <i class="fas fa-robot fa-2x"></i>
+    <p>Live Chat</p>
+
+</div>
+
+<div id="chat-container" style="display:none;">
+    <div id="chat-header">
+        Chat
+        <button id="close-btn"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="chat-messages">
+        <div class="message received">Hello! How can I help you today?</div>
+    </div>
+    <div id="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<script src="/static/js/chat.js"></script>
+<!-- Include any other JS files here -->
+</body>
+</html>

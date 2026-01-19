@@ -1,0 +1,429 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Program Recommendation</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/form_and_result.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript> -->
+    <!-- <link rel="preload" as="style" href="/static/css/additional.css"><link rel="stylesheet" href="/static/css/additional.css" type="text/css"> -->
+    <style>
+        
+        .style-017:hover {
+            background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+    }
+    .style-019:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+    }
+    .style-021:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+    } 
+    .style-023:hover {
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="background-holder"></div>
+    <nav class="style-00">
+           <div class="style-01">
+            <div class="style-02">
+                <span class="style-03">
+                    <a href="" class="style-04">
+                        <img src="/static/images/photo-1581078426770-6d336e5de7bf.jpeg" class="style-05" /> </a> </span> <span class="style-06">
+                    <a class="style-07" href="/"></a> </span>
+            </div> <button class="style-08" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="style-09">
+                    <span class="style-010"></span> <span class="style-011"></span> <span class="style-012"></span> <span class="style-013"></span>
+                </div>
+            </button>
+            <div class="style-014">
+                <ul class="style-015" data-app-modern-menu="true">
+                    <li class="style-016">
+                        <a class="style-017" style="font-size: 18px; "  href="/">Home</a>
+                    </li>
+                    <li class="style-018">
+                        <a class="style-019" style="font-size: 18px;" href="/about" aria-expanded="false">About</a>
+                    </li>
+                    <li class="style-020">
+                        <a class="style-021" style="font-size: 18px;" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="style-022">
+                    <a class="style-023" style="font-size: 18px;" href="/blog">Explore Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="container fade-in mt-5">
+    <h2 class="stylish-title">University Program Recommendation Form</h2>
+    <form action="/form" method="post" class="fade-in">
+        <div class="mb-3">
+            <label for="name" class="form-label">Enter Your Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="background_education" class="form-label">Background Education:</label>
+            <select name="background_education" id="background_education" class="form-select" required>
+                <option value="">--Select Education--</option>
+                <option value="Pre-Engineering">Pre-Engineering</option>
+                <option value="Pre-Medical">Pre-Medical</option>
+                <option value="ICS">ICS</option>
+                <option value="FA">FA</option>
+                <option value="Equivalent">Equivalent</option>
+            </select>
+        </div>
+    
+        <div class="mb-3">
+            <label for="first_year_marks" class="form-label">First Year Marks:</label>
+            <input type="number" id="first_year_marks" name="first_year_marks" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="second_year_marks" class="form-label">Second Year Total Marks:</label>
+            <input type="number" id="second_year_marks" name="second_year_marks" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="percentage" class="form-label">Percentage:</label>
+            <input type="text" id="percentage" name="percentage" class="form-control" onclick="calculatePercentage()">
+        </div>
+    
+        <div class="mb-3">
+            <label for="selected_program" class="form-label">Select Program:</label>
+            <select id="selected_program" name="selected_program" class="form-select" required>
+                <option value="">--Select a Program--</option>
+                <option value="BS Computer Science">BS Computer Science</option>
+                <option value="BS Information Technology">BS Information Technology</option>
+                <option value="BS Software Engineering">BS Software Engineering</option>
+                <option value="BBA">BBA</option>
+                <option value="BBA (Bachelor of Business Administration)">BBA (Bachelor of Business Administration)</option>
+                <option value="BBA (Hons)">BBA (Hons)</option>
+                <option value="BBA Agribusiness">BBA Agribusiness</option>
+                <option value="BS Agricultural Engineering">BS Agricultural Engineering</option>
+                <option value="BS Civil Engineering">BS Civil Engineering</option>
+                <option value="BS Electrical Engineering">BS Electrical Engineering</option>
+                <option value="BS Mechanical Engineering">BS Mechanical Engineering</option>
+                <option value="BS Environmental Engineering">BS Environmental Engineering</option>
+                <option value="BS Food Engineering">BS Food Engineering</option>
+                <option value="BS Polymer Engineering">BS Polymer Engineering</option>
+                <option value="BS Textile Engineering">BS Textile Engineering</option>
+                <option value="BS Nutrition & Dietetics">BS Nutrition & Dietetics</option>
+                <option value="BS Human Nutrition & Dietetics">BS Human Nutrition & Dietetics</option>
+                <option value="Doctor of Physical Therapy">Doctor of Physical Therapy</option>
+                <option value="Doctor of Physical Therapy (DPT)">Doctor of Physical Therapy (DPT)</option>
+                <option value="Doctor of Veterinary Medicine">Doctor of Veterinary Medicine</option>
+                <option value="BS Medical Lab Technology">BS Medical Lab Technology</option>
+                <option value="BS Medical Imaging Technology">BS Medical Imaging Technology</option>
+                <option value="BS Dermatological Sciences">BS Dermatological Sciences</option>
+                <option value="BS Emergency & Intensive Care Sciences">BS Emergency & Intensive Care Sciences</option>
+                <option value="BS Radiologic Technology">BS Radiologic Technology</option>
+                <option value="BS Optometry">BS Optometry</option>
+                <option value="BS Vision Sciences">BS Vision Sciences</option>
+                <option value="BS Biochemistry">BS Biochemistry</option>
+                <option value="BS Biotechnology">BS Biotechnology</option>
+                <option value="BS Chemistry">BS Chemistry</option>
+                <option value="BS Environmental Sciences">BS Environmental Sciences</option>
+                <option value="BS Physics">BS Physics</option>
+                <option value="BS Zoology">BS Zoology</option>
+                <option value="BS Botany">BS Botany</option>
+                <option value="BS Environmental Chemistry">BS Environmental Chemistry</option>
+                <option value="BA/BS Honours in English">BA/BS Honours in English</option>
+                <option value="BA/BS Honours in History">BA/BS Honours in History</option>
+                <option value="BS English">BS English</option>
+                <option value="BS English (Linguistics & Literature)">BS English (Linguistics & Literature)</option>
+                <option value="BS Psychology">BS Psychology</option>
+                <option value="BS Sociology">BS Sociology</option>
+                <option value="BS Education">BS Education</option>
+                <option value="BS Fine Arts">BS Fine Arts</option>
+                <option value="BS Graphic Design">BS Graphic Design</option>
+                <option value="BS Interior Design">BS Interior Design</option>
+                <option value="BS Commerce">BS Commerce</option>
+                <option value="BS Accounting & Finance">BS Accounting & Finance</option>
+                <option value="BS Islamic Studies">BS Islamic Studies</option>
+                <option value="BS Public Health">BS Public Health</option>
+                <option value="BS Speech & Language Pathology">BS Speech & Language Pathology</option>
+                <option value="BS Medical Laboratory Sciences">BS Medical Laboratory Sciences</option>
+                <option value="BS Mathematics">BS Mathematics</option>      
+            </select>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+
+<div class="article-showcase">
+    <div class="article">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Choosing the Right University</h3>
+        <p>
+        Choosing the right university is a pivotal decision that influences your academic journey and shapes your 
+        future prospects.It's not just about finding a place to study; it's about discovering an environment that
+        resonates with your personal and academic aspirations.As you embark on this quest, several factors come
+        into play, each significant in its own right
+        </p>
+    </div>
+    <div class="article">
+        <i class="fa-solid fa-book-open"></i>
+        <h3>Study Tips for Success</h3>
+        <p>Achieving academic excellence is a multifaceted goal that demands not just hard 
+            work, but also a strategic approach to studying. One of the foundational steps
+            towards this goal is setting clear objectives for each study session. By breaking
+            down your overarching academic goals into smaller, manageable tasks, you not only
+            make the workload seem less daunting but also provide yourself with a clear roadmap.
+        </p>
+    </div>
+    <div class="article">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Under Graduate Programs Overview</h3>
+        <p>At the heart of undergraduate education is the pursuit of knowledge across disciplines such as 
+        Sciences, Arts, Engineering, Business, and Humanities. Each field offers specialized programs tailored 
+        to equip students with both theoretical knowledge and practical skills relevant to their area of study.
+        For instance, a Bachelor of Science (B.S.) program focuses on empirical, scientific approaches</p>
+    </div>
+</div>
+
+
+<div id="overlay" style="display:none;"> <!-- Initially hidden -->
+    <div class="spinner-container">
+        <img src="/static/images/photo-1581078426770-6d336e5de7bf.jpeg" alt="Loading" class="loading-image">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Be Patient our AI System Suggesting Universities for you:</div>
+    </div>
+</div>
+
+
+
+<section class="section-background">
+    <div class="container2">
+        <div class="row">
+            <div class="column stats">
+                <div class="stats-box">
+                    <div class="text-box">
+                        <h5 class="headline">
+                            <strong class="highlight">95%</strong>
+                        </h5>
+                        <p class="description">
+                            Success Rate
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column students">
+                <div class="students-box">
+                    <div class="text-box">
+                        <h5 class="headline">
+                            <strong class="highlight">500+</strong>
+                        </h5>
+                        <p class="description">
+                            Happy Students
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column satisfaction">
+                <div class="satisfaction-box">
+                    <div class="text-box">
+                        <h5 class="headline">
+                            <strong class="highlight">100%</strong>
+                        </h5>
+                        <p class="description">
+                            Satisfaction Guaranteed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="style-0">
+    <div class="style-1">
+        <div class="style-2">
+            <div class="style-3">
+                <h3 class="style-4">
+                    <strong class="style-5" style="font-size: 40px;">Unlock Your University Destiny</strong>
+                </h3>
+            </div>
+            <div class="style-6" role="tablist" aria-multiselectable="true">
+                <div class="style-7">
+                    <div class="style-8" role="tab">
+                        <a role="button" class="style-9" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_0" aria-expanded="false" aria-controls="collapse1">
+                            <h6 class="style-10" style="font-size: 22px;">
+                                Find Your Dream University
+                            </h6> <span class="style-11"></span>
+                        </a>
+                    </div>
+                    <div class="style-12" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+                        <div class="style-13">
+                            <p class="style-14">
+                                Discover the perfect university match based on your criteria and aspirations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="style-15">
+                    <div class="style-16" role="tab">
+                        <a role="button" class="style-17" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_0" aria-expanded="false" aria-controls="collapse2">
+                            <h6 class="style-18" style="font-size: 22px;">
+                                How Does It Work?
+                            </h6> <span class="style-19"></span>
+                        </a>
+                    </div>
+                    <div class="style-20" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+                        <div class="style-21">
+                            <p class="style-22">
+                                Simply fill out our form with your marks and background education to receive personalized recommendations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="style-23">
+                    <div class="style-24" role="tab">
+                        <a role="button" class="style-25" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_0" aria-expanded="false" aria-controls="collapse3">
+                            <h6 class="style-26" style="font-size: 22px;">
+                                Why Trust Us?
+                            </h6> <span class="style-27"></span>
+                        </a>
+                    </div>
+                    <div class="style-28" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+                        <div class="style-29">
+                            <p class="style-30">
+                                We've helped countless students kickstart their university journey with confidence and success.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="style-31">
+                    <div class="style-32" role="tab">
+                        <a role="button" class="style-33" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_0" aria-expanded="false" aria-controls="collapse4">
+                            <h6 class="style-34" style="font-size: 22px;">
+                                Ready to Begin?
+                            </h6> <span class="style-35"></span>
+                        </a>
+                    </div>
+                    <div class="style-36" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+                        <div class="style-37">
+                            <p class="style-38">
+                                Start shaping your future today by taking the first step towards your dream university.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="style-39">
+                    <div class="style-40" role="tab">
+                        <a role="button" class="style-41" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_0" aria-expanded="false" aria-controls="collapse5">
+                            <h6 class="style-42" style="font-size: 22px;">
+                                Any Guarantees?
+                            </h6> <span class="style-43"></span>
+                        </a>
+                    </div>
+                    <div class="style-44" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+                        <div class="style-45">
+                            <p class="style-46">
+                                We guarantee to provide you with valuable insights to make informed decisions about your academic future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 University Guide. All Rights Reserved.</p>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="#">FAQ</a>
+    </nav>
+</footer>
+
+
+<script>
+    function calculatePercentage() {
+    var firstYearMarks = document.getElementById('first_year_marks').value;
+    var secondYearMarks = document.getElementById('second_year_marks').value;
+    
+    // Convert the input values to numbers
+    // firstYearMarks = firstYearMarks ? parseFloat(firstYearMarks) : 0;
+    secondYearMarks = secondYearMarks ? parseFloat(secondYearMarks) : 0;
+
+    // Apply the corrected formula
+    var percentage = (((secondYearMarks) * 100) / 1200).toFixed(2);
+
+    // Set the calculated percentage to the percentage input field
+    document.getElementById('percentage').value = percentage;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector('form'); // Make sure the form selector is correct
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the form's default submission
+
+        // Show the overlay and loading indicator
+        document.getElementById('overlay').style.display = 'flex';
+
+        // Disable the submit button to prevent multiple submissions
+        document.querySelector("button[type=submit]").disabled = true;
+
+        setTimeout(function() {
+            // Hide the overlay and loading indicator just before submission
+            document.getElementById('overlay').style.display = 'none';
+
+            // Enable the submit button again (optional, in case you redirect or reload the page after submission)
+            document.querySelector("button[type=submit]").disabled = false;
+
+            // Manually submit the form
+            form.submit();
+        }, 10000); // Adjust the delay as necessary
+    });
+});
+
+
+// Listen for scroll events on the window
+window.addEventListener('scroll', () => {
+// Get the showcase element
+var showcase = document.querySelector('.article-showcase');
+
+// Get the position of the showcase relative to the viewport
+var position = showcase.getBoundingClientRect();
+
+// Check if the showcase is within the viewport
+if(position.top < window.innerHeight && position.bottom >= 0) {
+    // Add the animated class to start the animation
+    showcase.classList.add('animated');
+}
+});
+
+
+</script>
+
+
+
+<!-- Bootstrap Bundle with Popper (for Bootstrap's JavaScript plugins) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

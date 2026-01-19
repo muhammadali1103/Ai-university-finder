@@ -1,0 +1,652 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Student Selection System</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo5.ico') }}" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:600,700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript>
+    <link rel="preload" as="style" href="/static/css/additional.css"><link rel="stylesheet" href="/static/css/additional.css" type="text/css">
+    <style>
+        
+        .style-017:hover {
+            background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+    .style-019:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+    .style-021:hover {
+        background-color: #918d8d37; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+    } 
+    .style-023:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+        
+        /* Global styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+       .container{
+        margin-top: 70px;
+       }
+        /* Articles Section */
+        .articles-section {
+            background-color: #f8f9fa;
+            color: #333;
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            color: #007bff;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .card {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: auto;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+        background-color: black;
+        color: white;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 110px;
+        padding-right: 110px;
+        display: flex; /* Make the footer a flex container */
+        justify-content: space-between; /* Distribute content horizontally */
+        align-items: center; /* Vertically align content in the center */
+    }
+    
+    footer p {
+        margin-bottom: 0; /* Remove bottom margin for tighter spacing */
+        font-size: 1.2rem;
+    }
+    
+    footer nav {
+        display: flex; /* Navigation is already flexbox for horizontal layout */
+        gap: 1rem;
+    }
+    
+    footer a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    .style-00 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px;
+    min-height: 90px;
+    transition: all 0.3s ease 0s;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(35, 35, 35);
+    box-shadow: none;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 1030;
+    box-sizing: border-box;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.style-01 {
+    max-width: 1320px;
+    display: flex;
+    height: 90px;
+    padding: 8px 9.6px;
+    flex-wrap: nowrap;
+    left: 0px;
+    right: 0px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 1706.67px;
+    margin-top: 16px;
+    box-shadow: rgba(27, 31, 10, 0.08) 0px 30px 60px 0px;
+    background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0% / auto padding-box border-box;
+    padding-left: 9.6px;
+    padding-right: 9.6px;
+    position: relative;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.style-02 {
+    flex-shrink: 0;
+    align-items: center;
+    margin-right: 0px;
+    padding: 10px 0px;
+    transition: all 0.3s ease 0s;
+    word-break: break-word;
+    z-index: 1;
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    text-decoration: none solid rgb(35, 35, 35);
+    white-space: nowrap;
+}
+
+.style-03 {
+    margin: 0px;
+    display: flex;
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    vertical-align: -4px;
+    margin-right: 0px;
+    transition: margin 0.3s ease-in-out 0s;
+    box-sizing: border-box;
+}
+
+.style-04 {
+    outline: rgb(238, 185, 2) none 0px;
+    transition: color 0.6s ease 0s;
+    color: rgb(238, 185, 2);
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    text-decoration: none solid rgb(238, 185, 2);
+    font-style: normal;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.style-05 {
+    height: 4.3rem;
+    min-width: 96px;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 32px;
+    display: flex;
+    width: auto;
+    transition: all 0.3s ease-in-out 0s;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.style-06 {
+    display: flex;
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    vertical-align: -4px;
+    box-sizing: border-box;
+}
+
+.style-07 {
+    font-size: 22.4px;
+    padding-left: 16px;
+    padding-right: 8px;
+    line-height: 22.4px;
+    transition: color 0.6s ease 0s;
+    color: rgb(35, 35, 35);
+    font-family: 'Inter Tight';
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 700;
+    text-decoration: none solid rgb(35, 35, 35);
+    font-style: normal;
+    cursor: pointer;
+    white-space: normal;
+    vertical-align: -4px;
+    box-sizing: border-box;
+}
+
+.style-08 {
+    display: none;
+    margin-left: 12px;
+    margin-right: 8px;
+    order: 1000;
+    outline: rgb(0, 0, 0) none 0px;
+    width: 31px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    position: relative;
+    align-self: center;
+    padding: 4px 12px;
+    font-size: 20px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0.888889px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    appearance: button;
+    text-transform: none;
+    margin: 0px 8px 0px 12px;
+    font-family: 'Inter Tight';
+    box-sizing: border-box;
+}
+
+.style-09 {
+    box-sizing: border-box;
+}
+
+.style-010 {
+    top: 0px;
+    transition: all 0.2s ease 0s;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    border-right: 0px none rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.style-011 {
+    top: 8px;
+    transition: all 0.15s ease 0s;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    border-right: 0px none rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.style-012 {
+    top: 8px;
+    transition: all 0.15s ease 0s;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    border-right: 0px none rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.style-013 {
+    top: 16px;
+    transition: all 0.2s ease 0s;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 2px;
+    border-right: 0px none rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    line-height: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.style-014 {
+    flex-basis: auto;
+    display: flex;
+    z-index: 1;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.style-015 {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 5.77778px;
+    font-size: 12px;
+    font-weight: 500;
+    height: auto !important;
+    margin-top: 5.77778px;
+    box-sizing: border-box;
+    list-style: outside none none;
+}
+
+.style-016 {
+    padding: 0px;
+    transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+}
+
+.style-017 {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 22.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+    margin: 0px;
+    border-radius: 16px;
+    transition: all 0.3s ease 0s;
+    color: rgb(35, 35, 35);
+    font-family: 'Inter Tight';
+    line-height: 33.6px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    text-decoration: none solid rgb(35, 35, 35);
+    font-style: normal;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.style-018 {
+    padding: 0px;
+    transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+}
+
+.style-019 {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 22.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+    margin: 0px;
+    border-radius: 16px;
+    transition: all 0.3s ease 0s;
+    color: rgb(35, 35, 35);
+    font-family: 'Inter Tight';
+    line-height: 33.6px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    text-decoration: none solid rgb(35, 35, 35);
+    font-style: normal;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.style-020 {
+    padding: 0px;
+    transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+}
+
+.style-021 {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 22.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+    margin: 0px;
+    border-radius: 16px;
+    transition: all 0.3s ease 0s;
+    color: rgb(35, 35, 35);
+    font-family: 'Inter Tight';
+    line-height: 33.6px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    text-decoration: none solid rgb(35, 35, 35);
+    font-style: normal;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.style-022 {
+    margin: -9.6px;
+    text-align: center;
+    min-width: 140px;
+    margin-left: -9.6px;
+    margin-right: -9.6px;
+    font-size: 0px;
+    box-sizing: border-box;
+}
+
+.style-023 {
+    font-size: 16px;
+    transition: all 0.2s ease-in-out 0s;
+    color: rgb(0, 0, 0);
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
+    background-color: rgb(238, 185, 2);
+    border-color: rgb(238, 185, 2);
+    padding: 10px 22px;
+    font-family: 'Inter Tight';
+    line-height: 33.6px;
+    border-width: 1.77778px;
+    font-weight: 600;
+    font-style: normal;
+    margin: 9.6px;
+    margin-right: 30px;
+    white-space: normal;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-decoration: none solid rgb(0, 0, 0);
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1.77778px solid rgb(238, 185, 2);
+}
+
+.style-023:hover{
+color: white;
+text-decoration: none;
+}
+
+
+    
+    </style>
+</head>
+<body>
+
+
+    <nav class="style-00">
+        <div class="style-01">
+         <div class="style-02">
+             <span class="style-03">
+                 <a href="" class="style-04">
+                     <img src="/static/images/photo-1581078426770-6d336e5de7bf.jpeg" class="style-05" /> </a> </span> <span class="style-06">
+                 <a class="style-07" href="/"></a> </span>
+         </div> <button class="style-08" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+             <div class="style-09">
+                 <span class="style-010"></span> <span class="style-011"></span> <span class="style-012"></span> <span class="style-013"></span>
+             </div>
+         </button>
+         <div class="style-014">
+             <ul class="style-015" data-app-modern-menu="true">
+                 <li class="style-016">
+                     <a class="style-017" style="font-size: 18px;" href="/">Home</a>
+                 </li>
+                 <li class="style-016">
+                    <a class="style-017" style="font-size: 18px;" href="/form">Find University</a>
+                </li>
+                 <li class="style-018">
+                     <a class="style-019" style="font-size: 18px;" href="/about" aria-expanded="false">About</a>
+                 </li>
+                 <li class="style-020">
+                     <a class="style-021" style="font-size: 18px;" href="/contact">Contact</a>
+                 </li>
+                 
+                 <li class="style-020">
+                     <a class="style-021" style="font-size: 18px;" href="/blog">Blog</a>
+                 </li>
+                 
+             </ul>
+             <div class="style-022">
+                 <a class="style-023" href="/form">Explore Now</a>
+             </div>
+         </div>
+     </div>
+ </nav>
+    <section class="about-us-section py-5">
+        <div class="container">
+            <h5 class="card-title">About Us</h5>
+            <p>At Student Selection System, we are driven by a singular vision: to empower undergraduate students with the tools they need to make informed decisions about their higher education journey. We understand that selecting the right university is a pivotal step that can shape one's future. This decision is not just about academic excellence but also about finding a place that resonates with one's personal and professional aspirations.</p>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Latest Insights</h2>
+            <div class="row">
+                <!-- The introductory paragraphs are intentionally left out for brevity -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/static/images/photo-1571260899304-425eee4c7efc.jpeg" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Understanding University Rankings</h5>
+                            <p class="card-text">In a world where education pathways are increasingly diverse and complex, our platform stands out as a beacon of guidance. 
+                            Our tool delves into the heart of what makes each institution unique and matches this with the criteria set forth by the students.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/static/images/photo-1491841550275-ad7854e35ca6.jpeg" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Financial Aid and Scholarships</h5>
+                            <p class="card-text">But our commitment doesn't stop at just providing recommendations. We believe in the power of information. As part of our platform, 
+                                we offer an extensive collection of articles, insights, and resources. These are designed to not only guide students through the process of university 
+                                selection.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/static/images/photo-1501504905252-473c47e087f8.jpeg" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h5 class="card-title">The Impact of Campus Culture</h5>
+                            <p class="card-text">Our journey began with a simple question: How can we leverage technology to democratize access to educational opportunities? 
+                                we leadto the creation of Student Selection System, where our AI-driven approach is breaking new ground in educational services.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <footer>
+        <p>&copy; 2024 University Guide. All Rights Reserved.</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </footer>
+    
+</body>
+</html>
+{% endblock %}
