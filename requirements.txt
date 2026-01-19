@@ -1,0 +1,5 @@
+Flask==2.3.4
+pandas==2.1.1
+openai==0.27.10
+python-dotenv==1.0.1
+googlesearch-python==1.1.0
